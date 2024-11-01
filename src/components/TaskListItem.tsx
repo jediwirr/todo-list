@@ -3,11 +3,10 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { Checkbox } from "react-native-paper";
 
 type TaskListItemProps = {
-  title: string;
-  description: string;
+  text: string;
 };
 
-export function TaskListItem({ title, description }: TaskListItemProps) {
+export function TaskListItem({ text }: TaskListItemProps) {
   const [checked, setIsChecked] = useState(false);
 
   const onPress = () => {
@@ -17,11 +16,10 @@ export function TaskListItem({ title, description }: TaskListItemProps) {
   return (
     <TouchableOpacity
       onPress={onPress}
-      className="p-4 flex-row justify-between bg-secondary"
+      className="p-4 flex-row justify-between bg-secondary rounded-3xl"
     >
       <View>
-        <Text className="text-xl text-accent">{title}</Text>
-        <Text className="text-xl text-accent">{description}</Text>
+        <Text className="text-xl text-accent">{text}</Text>
       </View>
       <Checkbox status={checked ? "checked" : "unchecked"} color="white" />
     </TouchableOpacity>

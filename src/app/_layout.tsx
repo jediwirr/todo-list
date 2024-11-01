@@ -3,9 +3,10 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
-import "../global.css";
+import "../../global.css";
 import { PaperProvider } from "react-native-paper";
-import { SafeAreaView } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -27,11 +28,12 @@ export default function RootLayout() {
 
   return (
     <PaperProvider>
-      <SafeAreaView className="flex-1">
+      <StatusBar style="light" />
+      <SafeAreaProvider>
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
         </Stack>
-      </SafeAreaView>
+      </SafeAreaProvider>
     </PaperProvider>
   );
 }

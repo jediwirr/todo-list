@@ -16,7 +16,7 @@ export function TaskListItem({ text }: TaskListItemProps) {
   return (
     <TouchableOpacity
       onPress={onPress}
-      className="p-4 flex-row justify-between bg-secondary rounded-3xl"
+      className="p-4 flex-row justify-between bg-secondary rounded-xl"
     >
       <View>
         <Text className="text-xl text-accent">{text}</Text>

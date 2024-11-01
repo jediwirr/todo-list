@@ -31,7 +31,8 @@ export default function RootLayout() {
       <StatusBar style="light" />
       <SafeAreaProvider>
         <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="add-task" />
         </Stack>
       </SafeAreaProvider>
     </PaperProvider>

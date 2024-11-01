@@ -2,10 +2,12 @@ import { Button } from "react-native-paper";
 import { Input } from "./Input";
 import { useState } from "react";
 import { useTodoStore } from "@/store";
+import { useNavigation } from "expo-router";
 
 export function AddTaskForm() {
   const [newTask, setNewTask] = useState("");
   const { addTask } = useTodoStore();
+  const { goBack } = useNavigation();
 
   const onChangeNewTask = (value: string) => {
     setNewTask(value);
@@ -17,7 +19,7 @@ export function AddTaskForm() {
 
   const onAddNewTask = () => {
     addTask(newTask);
-    setNewTask("");
+    goBack();
   };
   return (
     <>
